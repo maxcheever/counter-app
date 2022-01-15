@@ -7,9 +7,9 @@ class Counter extends Component {
 
   render() {
     return (
-    <div>
-        <span className="badge badge-primary">{this.formatCount()}</span>
-        <button>Increment</button>
+      <div>
+        <span class="badge bg-primary m-2">{this.formatCount()}</span>
+        <button class="btn btn-secondary btn-sm">Increment</button>
       </div>
     );
   }
