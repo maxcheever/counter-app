@@ -2,21 +2,21 @@ import React, { Component } from "react";
 
 class Counter extends Component {
     state = {
-        count: 0
+        count: 0,
     };
 
   render() {
     return (
-      <React.Fragment>
-        <span>{this.formatCount()}</span>
+    <div>
+        <span className="badge badge-primary">{this.formatCount()}</span>
         <button>Increment</button>
-      </React.Fragment>
+      </div>
     );
   }
 
   formatCount() {
-      const { count } = this.state;
-      return count === 0 ? 'Zero' : count;
+    const { count } = this.state;
+    return count === 0 ? 'Zero' : count;
   }
 }
 
