@@ -2,16 +2,20 @@ import React, { Component } from "react";
 
 class Counter extends Component {
 	state = {
-		count: 1,
+		count: 0,
+		tags: ["tag1", "tag2", "tag3"],
 	};
 
 	render() {
-		let classes = this.getBadgeClasses();
-
 		return (
 			<div>
-				<span class={classes}>{this.formatCount()}</span>
+				<span class={this.getBadgeClasses()}>{this.formatCount()}</span>
 				<button class="btn btn-secondary btn-sm">Increment</button>
+				<ul>
+					{this.state.tags.map((tag) => (
+						<li key={tag}>{tag}</li>
+					))}
+				</ul>
 			</div>
 		);
 	}
