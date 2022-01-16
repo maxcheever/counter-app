@@ -21,10 +21,23 @@ class Counter extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.tags.length === 0 && "Please create a new tag!"}
+				<span className={this.getBadgeClasses()}>
+					{this.formatCount()}
+				</span>
+				<button className="btn btn-secondary btn-sm">Increment</button>
 				{this.renderTags()}
 			</div>
 		);
+	}
+
+	getBadgeClasses() {
+		let classes = "badge m-2 bg-";
+		classes += this.state.count === 0 ? "warning" : "primary";
+		return classes;
+	}
+
+	formatCount() {
+		return this.state.count === 0 ? "Zero" : this.state.count;
 	}
 }
 
